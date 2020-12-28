@@ -173,3 +173,35 @@
 2. 파일 커밋 후 > git push -u origin master : 처음 한번만, 이후에는 git push
 
 * 원격 저장소에서 파일 내려받기 : git pull origin master
+
+
+
+## **깃허브에 SSH 원격 접속하기**
+
+* SSH 키 생성하기
+1. 홈 디렉터리에서 SSH-keygen 입력
+2. ENTER 3번
+3. $ cd ~/.ssh
+   $ ls -la
+   id_rsa : 프라이빗 키
+   id_rsa.pub : 퍼블릭 키
+
+
+
+* 깃허브에 퍼블릭 키 전송하기
+1. $ cd ~/.ssh
+   $ cat id_rsa.pub
+   : 퍼블릭 키 내용 복사
+2. 깃허브에 접속 후 settings
+3. SSSH and GPG keys -> New SSH key
+4. 쉽게 알아볼 수 있는 키 이름 지정 후 붙여넣기
+
+
+
+* SSH 주소로 원격 저장소 연결하기
+1. 깃허브 repository 생성 후 SSH 주소 복사
+2. $ cd ~
+   $ git init 만들 저장소 이름
+   $ cd 만들 저장소 이름
+3. git remote add origin 복사한 주소 붙여넣기
+4. 오류 메시지 없이 프롬프트($)가 표시되면 정상적으로 연결되었다는 뜻임.
